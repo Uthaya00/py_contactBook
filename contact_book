@@ -1,0 +1,38 @@
+class contact_book:
+    def __init__(self):
+        self.name = ""
+        self.phone_no = ""
+    def getcontactdetails(self):
+        self.name = input("Enter the name: ")
+        self.phone_no = input("Enter the number: ")
+    def display_contact(self):
+        con=self.name+ "-" +self.phone_no
+        print(con)
+       # print(self.phone_no)
+        print("")
+
+
+contact_list = []
+choice = 1
+while choice == 1:
+
+    print("""
+          1.ADD CONTACT
+          2.CONTACTS
+          3.Exit
+             """
+          )
+    response=int(input("enter your choice: "))
+
+    if(response == 1):
+        contact = contact_book()
+        contact.getcontactdetails()
+        contact_list.append(contact)
+    elif(response == 2):
+        for value in contact_list:
+            value.display_contact()
+
+    elif(response==3):
+        quit()
+    else:
+        choice = input("press 'y' to continue: ")
